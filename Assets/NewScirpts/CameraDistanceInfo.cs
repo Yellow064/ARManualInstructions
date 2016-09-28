@@ -2,19 +2,20 @@
 using System.Collections;
 
 public class CameraDistanceInfo : MonoBehaviour {
-    Transform ARCameraTransform;
-    Transform MyTransform;
+    public GameObject object1;
+    public GameObject object2;
     float myDistance;
+    public string myMsg;
 	// Use this for initialization
 	void Start () {
-        ARCameraTransform = GameObject.Find("ARCamera").transform;
-        MyTransform = GameObject.Find("Betty").transform;
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-        float myDistance = Vector3.Distance(MyTransform.position, ARCameraTransform.position);
+        float myDistance = Vector3.Distance(object1.transform.position, object2.transform.position);
         Debug.Log(myDistance);
-        Debug.Log("Say somehting hater");
+        if(myDistance < 70)
+            Debug.Log(myMsg);
     }
 }
