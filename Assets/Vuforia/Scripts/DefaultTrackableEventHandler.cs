@@ -95,13 +95,13 @@ namespace Vuforia
             // Disable rendering:
             foreach (Renderer component in rendererComponents)
             {
-                component.enabled = false;
+                component.enabled = true;
             }
 
             // Disable colliders:
             foreach (Collider component in colliderComponents)
             {
-                component.enabled = false;
+				component.enabled = true;
             }
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
